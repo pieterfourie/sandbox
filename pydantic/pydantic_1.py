@@ -23,3 +23,16 @@ user = User(**clean_data)
 print(f"User created: {user.name}, Age: {user.age}, Email: {user.email}")
 print(f"Model output: {user.model_dump()}")
 
+# Messy data that still works
+
+messy_data = {
+    "name" : "Bob Smith",
+    "email": "bob@company.com",
+    "age" : "45", # String instead of int
+    "is_active": "false", # String instead of bool
+}
+
+user = User(**messy_data)
+print(f" Age type: {type(user.age)}")
+print(f" Is_active type: {type(user.is_active)}")
+
